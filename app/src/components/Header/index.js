@@ -31,8 +31,11 @@ function Header() {
   return (
     <header className="header">
       <div className="header-content">
-        <img className="header-img" src={me}></img>
-        <p className="header-name">Ricky Allen Moore Jr</p>
+        <img className="header-img" src={me} alt='Profile IMG'></img>
+        <div>
+          <p className="header-name">Ricky Allen Moore Jr.</p>
+          <p className="header-title">Full-Stack Developer</p>
+        </div>
         <i class="fa-solid fa-bars fa-2xl"></i>
       </div>
     </header>
