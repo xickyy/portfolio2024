@@ -36,8 +36,46 @@ function Header() {
           <p className="header-name">Ricky Allen Moore Jr.</p>
           <p className="header-title">Full-Stack Developer</p>
         </div>
-        <i class="fa-solid fa-bars fa-2xl"></i>
+        <button className="header-button" onClick={toggleMobileMenu}>
+          <i className={isMobileMenuOpen ? "fa-solid fa-bars fa-2xl bars-open" : "fa-solid fa-bars fa-2xl bars-closed"}></i>
+          <i className={isMobileMenuOpen ? 'fa-solid fa-xmark fa-2xl x-open' : "fa-solid fa-xmark fa-2xl x-closed" }></i>
+        </button>
       </div>
+
+      {isMobileMenuOpen && (
+        <div className="custom-menu-slide">
+          <ul className="space-y-2">
+          <li>
+              <Link
+                className="hover:text-blue-300"
+                to="/"
+                onClick={toggleMobileMenu}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-blue-300"
+                to="/contact"
+                onClick={toggleMobileMenu}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-blue-300"
+                to="/resume"
+                onClick={toggleMobileMenu}
+              >
+                Resume
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
+
     </header>
   )
 };
